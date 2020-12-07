@@ -45,7 +45,8 @@ class RestaurantsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selected = restaurants[indexPath.row].name
         if selected == "McDonald's" {
-            
+            // Put data in drop down selection table.
+            // Print receipt with mcdonald's data.
         }
     }
 

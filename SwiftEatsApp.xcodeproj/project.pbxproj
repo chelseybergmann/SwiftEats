@@ -13,6 +13,7 @@
 		315C131C257DECCF00E32BAD /* RestaurantsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C131B257DECCF00E32BAD /* RestaurantsTable.swift */; };
 		315C131F257DECD400E32BAD /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C131E257DECD400E32BAD /* Options.swift */; };
 		315C1323257DECEA00E32BAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 315C1322257DECEA00E32BAD /* Assets.xcassets */; };
+		315C132D257E131C00E32BAD /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C132C257E131C00E32BAD /* Receipt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		315C131B257DECCF00E32BAD /* RestaurantsTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsTable.swift; sourceTree = "<group>"; };
 		315C131E257DECD400E32BAD /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		315C1322257DECEA00E32BAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		315C132C257E131C00E32BAD /* Receipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				315C1317257DEC5300E32BAD /* Main.storyboard */,
 				0E2901A722EAC51800F3A8BD /* LaunchScreen.storyboard */,
 				0E2901AA22EAC51800F3A8BD /* Info.plist */,
+				315C132C257E131C00E32BAD /* Receipt.swift */,
 			);
 			path = SwiftEatsApp;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				315C132D257E131C00E32BAD /* Receipt.swift in Sources */,
 				315C131F257DECD400E32BAD /* Options.swift in Sources */,
 				315C131C257DECCF00E32BAD /* RestaurantsTable.swift in Sources */,
 				0E29019F22EAC51700F3A8BD /* AppDelegate.swift in Sources */,

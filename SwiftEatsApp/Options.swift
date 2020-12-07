@@ -62,6 +62,14 @@ class ViewController: UIViewController {
         selectedButton = btnSelectSide
         addTransparentView(frames: btnSelectSide.frame)
     }
+    
+    @IBAction func onClickSelectDrink(_ sender: Any) {
+      
+        
+        dataSource = ["Coke", "Root Beer"]
+        selectedButton = btnSelectDrink
+        addTransparentView(frames: btnSelectSide.frame)
+    }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
