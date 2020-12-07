@@ -8,6 +8,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnSelectDrink: UIButton!
     @IBOutlet weak var btnSelectEntree: UIButton!
     @IBOutlet weak var btnSelectSide: UIButton!
+//    @IBOutlet weak var checkout: UIButton!
     
     let transparentView = UIView()
     let tableView = UITableView()
@@ -15,6 +16,12 @@ class ViewController: UIViewController {
     var selectedButton = UIButton()
     
     var dataSource = [String]()
+    var selectedResterant = ""
+    
+    var nextUVC = Receipt()
+    var selectedEntree = ""
+    var selectedSide = ""
+    var selectedDrink = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,21 +59,43 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onClickSelectFruit(_ sender: Any) {
-        dataSource = ["Apple", "Mango", "Orange"] 
+        if(selectedResterant == "McDonald's"){
+            dataSource = ["Hamburger", "McChicken", "McNuggets"]
+        }
+        if(selectedResterant == "Chipotle"){
+            dataSource = ["Bowl", "Tacos", "Plate"]
+        }
+        if(selectedResterant == "Taco Bell"){
+            dataSource = ["Quesadilla", "Crunchwrap", "Taco Pack"]
+        }
         selectedButton = btnSelectEntree
         addTransparentView(frames: btnSelectEntree.frame)
     }
     
     @IBAction func onClickSelectGender(_ sender: Any) {
-        dataSource = ["Male", "Female"]
+        if(selectedResterant == "McDonald's"){
+            dataSource = ["Fries", "Apple", "Yogurt"]
+        }
+        if(selectedResterant == "Chipotle"){
+            dataSource = ["Chips", "Rice", "Beans"]
+        }
+        if(selectedResterant == "Taco Bell"){
+            dataSource = ["Chips", "Rice", "Extra Sauce"]
+        }
         selectedButton = btnSelectSide
         addTransparentView(frames: btnSelectSide.frame)
     }
     
     @IBAction func onClickSelectDrink(_ sender: Any) {
-      
-        
-        dataSource = ["Coke", "Root Beer"]
+        if(selectedResterant == "McDonald's"){
+            dataSource = ["Coke", "Diet Coke", "Sprite"]
+        }
+        if(selectedResterant == "Chipotle"){
+            dataSource = ["Coke", "Diet Coca", "Water"]
+        }
+        if(selectedResterant == "Taco Bell"){
+            dataSource = ["Coke", "7up Slushie", "Freezie"]
+        }
         selectedButton = btnSelectDrink
         addTransparentView(frames: btnSelectSide.frame)
     }
@@ -91,4 +120,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         selectedButton.setTitle(dataSource[indexPath.row], for: .normal)
         removeTransparentView()
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        nextUVC = segue.destination as! Receipt
+//    }
 }
