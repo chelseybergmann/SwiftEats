@@ -6,7 +6,9 @@
 //
 
 import UIKit
-
+//protocol {
+//    void setDataSource(String[] a)
+//}
 struct Restaurant {
     var isoCode: String
     var name: String
@@ -24,6 +26,8 @@ class RestaurantsTableViewController: UITableViewController {
         Restaurant(isoCode: "chipotle", name: "Chipotle"),
         Restaurant(isoCode: "tacobell", name: "Taco Bell"),
     ]
+    
+    var nextVC = ViewController()
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -43,11 +47,11 @@ class RestaurantsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selected = restaurants[indexPath.row].name
-        if selected == "McDonald's" {
-            // Put data in drop down selection table.
-            // Print receipt with mcdonald's data.
-        }
+        nextVC.selectedResterant = restaurants[indexPath.row].name
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      // Get the new view controller.
+        nextVC = segue.destination as! ViewController
+    }
 }
