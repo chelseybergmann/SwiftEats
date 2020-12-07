@@ -8,7 +8,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnSelectDrink: UIButton!
     @IBOutlet weak var btnSelectEntree: UIButton!
     @IBOutlet weak var btnSelectSide: UIButton!
-//    @IBOutlet weak var checkout: UIButton!
+    @IBOutlet weak var checkoutBtn: UIButton!
+    @IBAction func checkoutBtn(_ sender: Any) {
+        // Send data and total to reciept
+
+        selectedEntree = selectedButtonEntree.currentTitle!
+        print(selectedEntree)
+        selectedSide = selectedButtonSide.currentTitle!
+        selectedDrink = selectedButtonEntree.currentTitle!
+
+        nextUVC.restaurantLabel?.text = selectedResterant
+        nextUVC.entreeLabel?.text = selectedEntree
+        nextUVC.sideLabel?.text = selectedSide
+        nextUVC.drinkLabel?.text = selectedDrink
+        
+    }
     
     let transparentView = UIView()
     let tableView = UITableView()
@@ -22,6 +36,11 @@ class ViewController: UIViewController {
     var selectedEntree = ""
     var selectedSide = ""
     var selectedDrink = ""
+    
+    var selectedButtonEntree =  UIButton()
+    var selectedButtonSide =  UIButton()
+    var selectedButtonDrink =  UIButton()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +88,7 @@ class ViewController: UIViewController {
             dataSource = ["Quesadilla", "Crunchwrap", "Taco Pack"]
         }
         selectedButton = btnSelectEntree
+        selectedButtonEntree = btnSelectEntree
         addTransparentView(frames: btnSelectEntree.frame)
     }
     
@@ -83,6 +103,7 @@ class ViewController: UIViewController {
             dataSource = ["Chips", "Rice", "Extra Sauce"]
         }
         selectedButton = btnSelectSide
+        selectedButtonSide = btnSelectSide
         addTransparentView(frames: btnSelectSide.frame)
     }
     
@@ -97,6 +118,7 @@ class ViewController: UIViewController {
             dataSource = ["Coke", "7up Slushie", "Freezie"]
         }
         selectedButton = btnSelectDrink
+        selectedButtonDrink = btnSelectDrink
         addTransparentView(frames: btnSelectSide.frame)
     }
 }
@@ -121,7 +143,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         removeTransparentView()
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        nextUVC = segue.destination as! Receipt
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        nextUVC = segue.destination as! Receipt
+    }
 }
+
