@@ -55,3 +55,4 @@ class RestaurantsTableViewController: UITableViewController {
         nextVC = segue.destination as! ViewController
     }
 }
+
